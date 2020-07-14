@@ -10,9 +10,23 @@
 }
 
 .time-block > input {
-
+  margin: 1%;
+  border-radius: 5px;
+  font-size: 150%;
+  width: 5%;
+  padding: 1%;
 }
 
-.invisible {
+.invisble {
   display: none;
+}
+
+.time-up-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  color: red;
+  font-size: 150%;
+  padding: 2%;
 }
