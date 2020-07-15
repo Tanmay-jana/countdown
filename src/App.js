@@ -29,6 +29,8 @@ export default class App extends Component {
       this.state.hours <= 0
     ) {
       alert("Cannot start with 0");
+    } else if(this.state.isStart === true) {
+      this.setState({isStart: false})
     } else {
       this.setState({ isStart: true });
       let interval = setInterval(() => {
@@ -56,6 +58,9 @@ export default class App extends Component {
           this.state.seconds === 0
         ) {
           this.setState({ timesUp: true, isStart: false });
+          clearInterval(interval);
+        } else if(this.state.isStart === false) {
+          this.setState({ isStart: false });
           clearInterval(interval);
         }
       }, 1000);
