@@ -2,6 +2,26 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+## Install dependencies
+
+you need to install Node.js, NPM, Yarn
+
+For ubuntu see 
+-[https://www.devroom.io/2011/10/24/installing-node-js-and-npm-on-ubuntu-debian/] 
+-[https://linuxize.com/post/how-to-install-yarn-on-ubuntu-18-04/]
+
+For Window see
+-[https://phoenixnap.com/kb/install-node-js-npm-on-windows]
+-[https://classic.yarnpkg.com/en/docs/install/#windows-stable]
+
+
+After installing Node.js, NPM and yarn. open a console in the project folder and run 
+### `npm i`
+It will install all the required library for the project.
+
+Now it is ready to run locally for testing
+
+
 In the project directory, you can run:
 
 ### `yarn start`
