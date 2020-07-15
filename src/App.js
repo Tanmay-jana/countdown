@@ -29,12 +29,15 @@ export default class App extends Component {
       this.state.hours <= 0
     ) {
       alert("Cannot start with 0");
-    } else if(this.state.isStart === true) {
-      this.setState({isStart: false})
+    } else if (this.state.isStart === true) {
+      this.setState({ isStart: false });
     } else {
       this.setState({ isStart: true });
       let interval = setInterval(() => {
-        if (this.state.seconds > 0) {
+        if (this.state.isStart === false) {
+          this.setState({ isStart: false });
+          clearInterval(interval);
+        } else if (this.state.seconds > 0) {
           this.setState((prevState) => ({
             seconds: prevState.seconds - 1,
           }));
@@ -59,9 +62,6 @@ export default class App extends Component {
         ) {
           this.setState({ timesUp: true, isStart: false });
           clearInterval(interval);
-        } else if(this.state.isStart === false) {
-          this.setState({ isStart: false });
-          clearInterval(interval);
         }
       }, 1000);
     }
@@ -80,7 +80,13 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className={this.state.timesUp === false ? "invisble" : "time-up-block"}>Times Up!!!</div>
+        <div
+          className={
+            this.state.timesUp === false ? "invisble" : "time-up-block"
+          }
+        >
+          Times Up!!!
+        </div>
         <div className={this.state.timesUp ? "invisble" : "time-block"}>
           <input
             type="number"
